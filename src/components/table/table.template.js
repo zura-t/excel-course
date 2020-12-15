@@ -28,50 +28,50 @@ function toCell(state, row) {
 			...state.stylesState[id]
 		})
 		return `
-      <div 
-        class="cell" 
-        contenteditable 
-        data-col="${col}"
-        data-type="cell"
-        data-id="${id}"
-        data-value="${data || ''}"
-        style="${styles}; width: ${width}"
-      >${parse(data) || ''}</div>
-    `
+		<div
+			class="cell"
+			contenteditable
+			data-col="${col}"
+			data-type="cell"
+			data-id="${id}"
+			data-value="${data || ''}"
+			style="${styles}; width: ${width}"
+		>${parse(data) || ''}</div>
+		`
 	}
 }
 
 function toColumn({ col, index, width }) {
 	return `
-    <div 
+   <div 
       class="column" 
       data-type="resizable" 
       data-col="${index}" 
       style="width: ${width}"
-    >
+   >
       ${col}
       <div class="col-resize" data-resize="col"></div>
-    </div>
-  `
+   </div>
+	`
 }
 
 function createRow(index, content, state = {}) {
 	const resize = index ? '<div class="row-resize" data-resize="row"></div>' : ''
 	const height = getHeight(state, index)
 	return `
-    <div 
+   <div 
       class="row" 
       data-type="resizable" 
       data-row="${index}"
       style="height: ${height}"
-    >
+   >
       <div class="row-info">
-        ${index ? index : ''}
-        ${resize}
+		${index ? index : ''} 
+		${resize}
       </div>
       <div class="row-data">${content}</div>
-    </div>
-  `
+   </div>
+	`
 }
 
 function toChar(_, index) {
