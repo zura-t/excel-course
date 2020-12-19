@@ -21,7 +21,7 @@ describe('Router:', () => {
 			excel: ExcelPage
 		})
 	})
-	
+
 	test('should be defined', () => {
 		expect(router).toBeDefined()
 	})
