@@ -5,7 +5,7 @@ class DashboardPage extends Page {
 	getRoot() {
 		const root = document.createElement('div')
 		root.innerHTML = 'dashboard'
-		return root
+		return root;
 	}
 }
 
